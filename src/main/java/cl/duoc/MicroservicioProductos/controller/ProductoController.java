@@ -73,7 +73,7 @@ public class ProductoController {
     })
     public ResponseEntity<?> obtenerPorId(@PathVariable int id) {
         try {
-            Producto producto = productoService.obtenerPorId(id);
+            Producto producto = productoService.obtenerPorId(null);
             return producto != null
                     ? ResponseEntity.ok(assembler.toModel(producto))
                     : ResponseEntity.notFound().build();
@@ -120,9 +120,9 @@ public class ProductoController {
     })
     public ResponseEntity<?> actualizarProducto(@PathVariable int id, @RequestBody Producto productoActualizado) {
         try {
-            Producto productoExistente = productoService.obtenerPorId(id);
+            Producto productoExistente = productoService.obtenerPorId(null);
             if (productoExistente != null) {
-                productoActualizado.setIdItem(id);
+                productoActualizado.setIdProducto(null);;
                 Producto actualizado = productoService.guardarProducto(productoActualizado);
                 return ResponseEntity.ok(assembler.toModel(productoActualizado));
             } else {
@@ -149,7 +149,7 @@ public class ProductoController {
     })
     public ResponseEntity<?> eliminarProducto(@PathVariable int id) {
         try {
-            productoService.eliminarProducto(id);
+            productoService.eliminarProducto(null);;
             return ResponseEntity.noContent().build();
         } catch (Exception e) {
             return ResponseEntity.internalServerError().body("Error al eliminar el producto: " + e.getMessage());

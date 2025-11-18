@@ -10,40 +10,31 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "INVENTARIO")
+@Table(name = "PRODUCTO")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Schema(description = "Entidad que representa un producto")
-
 public class Producto {
 
     @Id
     @Column(name = "ID_PRODUCTO")
-    @Schema(description = "id producto")
-
-    private int idItem;
-
+    @Schema(description = "ID del producto")
+    private String idProducto; 
 
     @Column(name = "NOMBRE", nullable = false)
-    @Schema(description = "nombre del producto")
-
-    private String nombreProducto;
+    @Schema(description = "Nombre del producto")
+    private String nombre;
 
     @Column(name = "DESCRIPCION")
-    @Schema(description = "descripcion producto")
-
+    @Schema(description = "Descripción del producto")
     private String descripcion;
 
     @Column(name = "CATEGORIA_ID_CATEGORIA")
-    @Schema(description = "categoria producto")
-
-    private String categoria;
-
+    @Schema(description = "ID de categoría")
+    private String categoriaId;
 
     @Column(name = "PRECIO")
-    @Schema(description = "precio del producto")
-
-    private int precioUnitario;
-
+    @Schema(description = "Precio unitario del producto")
+    private String precio; 
 }

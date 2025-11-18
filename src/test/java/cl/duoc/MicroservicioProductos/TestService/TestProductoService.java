@@ -41,13 +41,13 @@ public class TestProductoService {
         Producto Producto1 = new Producto();
         Producto Producto2 = new Producto();
 
-        Producto1.setIdItem(1);
+        Producto1.setIdItem(null);;
         Producto1.setCategoria("reutilizable");
         Producto1.setDescripcion("lavado de manos");
         Producto1.setNombreProducto("jabon");
         Producto1.setPrecioUnitario(1000);
 
-        Producto2.setIdItem(2);
+        Producto2.setIdItem(null);;
         Producto2.setCategoria("ecofriendly");
         Producto2.setDescripcion("botella reciclada");
         Producto2.setNombreProducto("Botella reciclada");
@@ -67,7 +67,7 @@ public class TestProductoService {
     @Test
     public void testBuscarUnProducto(){
         Producto Producto1 = new Producto();
-        Producto1.setIdItem(1);
+        Producto1.setIdItem(null);
         Producto1.setCategoria("reutilizable");
         Producto1.setDescripcion("lavado de manos");
         Producto1.setNombreProducto("jabon");
@@ -84,7 +84,7 @@ public class TestProductoService {
     @Test
     public void testGuardarProducto(){
         Producto Producto1 = new Producto();
-        Producto1.setIdItem(1);
+        Producto1.setIdItem(null);;
         Producto1.setCategoria("reutilizable");
         Producto1.setDescripcion("lavado de manos");
         Producto1.setNombreProducto("jabon");

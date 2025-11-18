@@ -22,14 +22,14 @@ public class DataLoader implements CommandLineRunner{
     public void run(String... args) throws Exception{
         for (int i=0; i > 10; i ++){
             Producto nuevoProducto = new Producto();
-            nuevoProducto.setIdItem(random.nextInt(100));
-            nuevoProducto.setCategoria(faker.cannabis().categories());
+            nuevoProducto.setIdProducto(random.toString());
+            nuevoProducto.setCategoriaId(faker.cannabis().categories());
             nuevoProducto.setDescripcion(random.toString());
-            nuevoProducto.setNombreProducto(faker.cannabis().toString());
-            nuevoProducto.setPrecioUnitario(random.nextInt(100));
+            nuevoProducto.setNombre(faker.cannabis().toString());
+            nuevoProducto.setPrecio(random.toString());
 
             productosservice.guardarProducto(nuevoProducto);
-            System.out.println("Productos Guardada" + nuevoProducto.getIdItem());
+            System.out.println("Productos Guardada" + nuevoProducto.getIdProducto());
         
         }
     }    
